@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgGameKata", "RpgGameKata\RpgGameKata.csproj", "{446F57F7-7292-4F81-BBB5-3787F135FAD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpgGameKata.Tests", "RpgGameKata.Tests\RpgGameKata.Tests.csproj", "{B0427001-EF63-4E11-9309-ABA64A804443}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{446F57F7-7292-4F81-BBB5-3787F135FAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{446F57F7-7292-4F81-BBB5-3787F135FAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{446F57F7-7292-4F81-BBB5-3787F135FAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{446F57F7-7292-4F81-BBB5-3787F135FAD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0427001-EF63-4E11-9309-ABA64A804443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0427001-EF63-4E11-9309-ABA64A804443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0427001-EF63-4E11-9309-ABA64A804443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0427001-EF63-4E11-9309-ABA64A804443}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
