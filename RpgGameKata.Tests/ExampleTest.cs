@@ -1,14 +1,28 @@
-using System;
 using Xunit;
 
 namespace RpgGameKata.Tests
 {
-    public class ExampleTest
-    {
-        [Fact]
-        public void A_Simple_Test()
-        {
-            Assert.True(false); // Fix me first!
-        }
-    }
+	public class ExampleTest
+	{
+		[Fact]
+		public void Damage_To_Character_Decrease_His_Health()
+		{
+			Character character1 = new Character();
+			Character character2 = new Character();
+
+			character1.Attack(character2, 1);
+			Assert.Equal(999, character2.Health);
+
+		}
+	}
+
+	public class Character
+	{
+		public int Health { get; set; } = 1000;
+
+		internal void Attack(Character character2, int damage)
+		{
+			character2.Health -= damage;
+		}
+	}
 }
