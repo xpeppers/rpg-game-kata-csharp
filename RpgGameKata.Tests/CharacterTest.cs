@@ -13,5 +13,13 @@ namespace RpgGameKata.Tests
 
             Assert.Equal(1000, c.Health);
         }
+
+        [Fact]
+        public void CharacterStartsWithLevel1()
+        {
+            Character c = new Character();
+
+            Assert.Equal(1, c.Level);
+        }
     }
 }
