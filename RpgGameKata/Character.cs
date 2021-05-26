@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RpgGameKata
 {
@@ -9,5 +10,10 @@ namespace RpgGameKata
         public int Level { get; private set; } = 1;
 
         public bool IsAlive { get; set; } = true;
+
+        public void Damage(int damage)
+        {
+            Health -= damage;
+        }
     }
 }
