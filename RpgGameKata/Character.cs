@@ -13,7 +13,13 @@ namespace RpgGameKata
 
         public void Damage(int damage)
         {
-            Health -= damage;
+            if (damage >= Health)
+            {
+                Health = 0;
+                IsAlive = false;
+            }
+            else
+                Health -= damage;
         }
     }
 }

@@ -40,5 +40,32 @@ namespace RpgGameKata.Tests
 
             Assert.Equal(previousHealth - damage, c1.Health);
         }
+
+        [Fact]
+        public void CharacterHasDamagedOverDeath()
+        {
+            Character c1 = new Character();
+            int previousHealth = c1.Health;
+
+            int damage = previousHealth + 1;
+            c1.Damage(damage);
+
+            Assert.Equal(0, c1.Health);
+            Assert.False(c1.IsAlive);
+        }
+
+        [Fact]
+        public void CharacterHasDamagedExactlyToDeath()
+        {
+            Character c1 = new Character();
+            int previousHealth = c1.Health;
+
+            int damage = previousHealth;
+            c1.Damage(damage);
+
+            Assert.Equal(0, c1.Health);
+            Assert.False(c1.IsAlive);
+        }
+
     }
 }
