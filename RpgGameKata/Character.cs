@@ -5,9 +5,9 @@ namespace RpgGameKata
 {
     public class Character
     {
+        const int HealthLimit = 1000;
 
-
-        public int Health { get; private set; } = 1000;
+        public int Health { get; private set; } = HealthLimit;
 
         public int Level { get; private set; } = 1;
 
@@ -27,8 +27,8 @@ namespace RpgGameKata
         public void Heal(int heal)
         {
             Health += heal;
-            if (Health > 1000)
-                Health = 1000;
+            if (Health > HealthLimit)
+                Health = HealthLimit;
         }
     }
 }

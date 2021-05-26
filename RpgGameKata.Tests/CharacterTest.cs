@@ -6,12 +6,14 @@ namespace RpgGameKata.Tests
 {
     public class CharacterTest
     {
+        const int HealthLimit = 1000;
+
         [Fact]
         public void CharacterStartsWithHealth1000()
         {
             Character c = new Character();
 
-            Assert.Equal(1000, c.Health);
+            Assert.Equal(HealthLimit, c.Health);
         }
 
         [Fact]
@@ -75,9 +77,8 @@ namespace RpgGameKata.Tests
             c1.Damage(x);
             c1.Heal(x);
 
-            Assert.Equal(1000, c1.Health);
+            Assert.Equal(HealthLimit, c1.Health);
         }
-
 
         [Fact]
         public void CharacterHealthCannotBeOver1000()
@@ -88,7 +89,7 @@ namespace RpgGameKata.Tests
             c1.Damage(x);
             c1.Heal(x + 1);
 
-            Assert.Equal(1000, c1.Health);
+            Assert.Equal(HealthLimit, c1.Health);
         }
     }
 }
