@@ -26,15 +26,27 @@ namespace RpgGameKata.Tests
 			Assert.Equal(0, target.Health);
             Assert.False(target.IsAlive);
         }
-		[Fact]
 		
+		[Fact]
 		public void Heal_Character_Increase_Own_Health()
 		{
 			Character player = new Character();
+			Character attacker = new Character();
 
+			attacker.Attack(player, 500);
 			player.Heal(1);
 
-			Assert.Equal(1001, player.Health);
+			Assert.Equal(501, player.Health);
 		}
-	}
+
+		[Fact]
+		public void Cannot_Heal_Over_Maximum_Health()
+        {
+            Character player = new Character();
+
+            player.Heal(1);
+
+            Assert.Equal(1000, player.Health);
+        }
+    }
 }
