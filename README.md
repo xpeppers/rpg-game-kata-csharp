@@ -38,3 +38,19 @@ ability to damage and heal one another.
 1. When dealing damage:
     - If the target is 5 or more Levels above the attacker, Damage is reduced by 50%
     - If the target is 5 or more levels below the attacker, Damage is increased by 50%
+   
+## Iteration Three ##
+
+1. Characters have an attack Max Range.
+
+1. *Melee* fighters have a range of 2 meters.
+
+1. *Ranged* fighters have a range of 20 meters.
+
+1. Characters must be in range to deal damage to a target.
+
+## Retrospective ##
+
+- Are you keeping up with the requirements? Has any iteration been a big challenge?
+- Do you feel good about your design? Is it scalable and easily adapted to new requirements?
+- Is everything tested? Are you confident in your code?
