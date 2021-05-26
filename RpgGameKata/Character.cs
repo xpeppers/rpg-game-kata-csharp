@@ -11,14 +11,16 @@ namespace RpgGameKata
 
         public int Level { get; private set; } = 1;
 
-        public bool IsAlive { get; private set; } = true;
+        public bool IsAlive
+        {
+            get { return Health > 0; }
+        }
 
         public void Damage(int damage)
         {
             if (damage >= Health)
             {
                 Health = 0;
-                IsAlive = false;
             }
             else
                 Health -= damage;
