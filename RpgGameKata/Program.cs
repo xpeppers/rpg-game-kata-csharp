@@ -1,0 +1,12 @@
+using System;
+
+namespace RpgGameKata
+{
+    public static class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("hello!");
+        }
+    }
+}
