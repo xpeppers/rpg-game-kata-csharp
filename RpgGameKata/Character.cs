@@ -9,7 +9,7 @@ namespace RpgGameKata
 
         public int Level { get; private set; } = 1;
 
-        public bool IsAlive { get; set; } = true;
+        public bool IsAlive { get; private set; } = true;
 
         public void Damage(int damage)
         {

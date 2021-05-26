@@ -26,6 +26,7 @@ namespace RpgGameKata.Tests
         public void CharacterStartsAlive()
         {
             Character c = new Character();
+
             Assert.True(c.IsAlive);
         }
 
@@ -45,9 +46,8 @@ namespace RpgGameKata.Tests
         public void CharacterHasDamagedOverDeath()
         {
             Character c1 = new Character();
-            int previousHealth = c1.Health;
 
-            int damage = previousHealth + 1;
+            int damage = c1.Health + 1;
             c1.Damage(damage);
 
             Assert.Equal(0, c1.Health);
@@ -58,9 +58,8 @@ namespace RpgGameKata.Tests
         public void CharacterHasDamagedExactlyToDeath()
         {
             Character c1 = new Character();
-            int previousHealth = c1.Health;
 
-            int damage = previousHealth;
+            int damage = c1.Health;
             c1.Damage(damage);
 
             Assert.Equal(0, c1.Health);
