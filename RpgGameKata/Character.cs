@@ -35,5 +35,11 @@ namespace RpgGameKata
             if (Health > HealthLimit)
                 Health = HealthLimit;
         }
+
+        public void Damage(Character character, int damage)
+        {
+            if (character.Equals(this))
+                return;
+        }
     }
 }

@@ -103,5 +103,18 @@ namespace RpgGameKata.Tests
             Assert.Equal(0, c1.Health);
             Assert.False(c1.IsAlive);
         }
+
+        [Fact]
+        public void CharacterCannotDamageHimself()
+        {
+            Character c1 = new Character();
+
+            int previousHealth = c1.Health;
+            c1.Damage(c1, 1);
+
+            Assert.Equal(previousHealth, c1.Health);
+        }
+
+
     }
 }
