@@ -21,5 +21,10 @@ namespace RpgGameKata
             else
                 Health -= damage;
         }
+
+        public void Heal(int heal)
+        {
+            Health += heal;
+        }
     }
 }
