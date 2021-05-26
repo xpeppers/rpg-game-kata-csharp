@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace RpgGameKata.Tests
@@ -14,6 +15,18 @@ namespace RpgGameKata.Tests
 			Assert.Equal(999, character2.Health);
 
 		}
+
+		[Fact]
+		public void Damage_To_Character_When_Damage_Exceeds_Health()
+		{
+			Character character1 = new Character();
+			Character character2 = new Character();
+
+			character1.Attack(character2, 1001);
+
+			Assert.Equal(0, character2.Health);
+			//Assert.False(character2.IsAlive);
+		}
 	}
 
 	public class Character
@@ -22,7 +35,7 @@ namespace RpgGameKata.Tests
 
 		internal void Attack(Character character2, int damage)
 		{
-			character2.Health -= damage;
+			character2.Health -= Math.Min(character2.Health, damage);
 		}
 	}
 }
