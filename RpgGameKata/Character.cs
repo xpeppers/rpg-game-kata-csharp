@@ -26,6 +26,9 @@ namespace RpgGameKata
 
         public void Heal(int heal)
         {
+            if (!IsAlive)
+                return;
+
             Health += heal;
             if (Health > HealthLimit)
                 Health = HealthLimit;
