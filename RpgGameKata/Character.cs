@@ -5,6 +5,8 @@ namespace RpgGameKata
 {
     public class Character
     {
+
+
         public int Health { get; private set; } = 1000;
 
         public int Level { get; private set; } = 1;
@@ -25,6 +27,8 @@ namespace RpgGameKata
         public void Heal(int heal)
         {
             Health += heal;
+            if (Health > 1000)
+                Health = 1000;
         }
     }
 }

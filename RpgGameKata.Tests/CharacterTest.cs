@@ -78,5 +78,17 @@ namespace RpgGameKata.Tests
             Assert.Equal(1000, c1.Health);
         }
 
+
+        [Fact]
+        public void CharacterHealthCannotBeOver1000()
+        {
+            Character c1 = new Character();
+
+            int x = 70;
+            c1.Damage(x);
+            c1.Heal(x + 1);
+
+            Assert.Equal(1000, c1.Health);
+        }
     }
 }
