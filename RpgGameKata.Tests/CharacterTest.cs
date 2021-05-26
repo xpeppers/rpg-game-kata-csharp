@@ -21,5 +21,13 @@ namespace RpgGameKata.Tests
 
             Assert.Equal(1, c.Level);
         }
+
+        [Fact]
+        public void CharacterStartsAlive()
+        {
+            Character c = new Character();
+            Assert.True(c.IsAlive);
+        }
+
     }
 }

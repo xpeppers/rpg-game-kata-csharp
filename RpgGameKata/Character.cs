@@ -4,14 +4,10 @@ namespace RpgGameKata
 {
     public class Character
     {
-        public Character()
-        {
-            Health = 1000;
+        public int Health { get; private set; } = 1000;
 
-            Level = 1;
-        }
+        public int Level { get; private set; } = 1;
 
-        public int Health { get; private set; }
-        public int Level { get; private set; }
+        public bool IsAlive { get; set; } = true;
     }
 }
