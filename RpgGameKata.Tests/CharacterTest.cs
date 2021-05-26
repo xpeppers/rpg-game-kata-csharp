@@ -35,73 +35,80 @@ namespace RpgGameKata.Tests
         [Fact]
         public void CharacterHasDamaged()
         {
-            Character c1 = new Character();
-            int previousHealth = c1.Health;
+            Character Attacker = new Character();
+            Character Defender = new Character();
+
+            int previousHealth = Defender.Health;
 
             int damage = 1;
-            c1.Damage(damage);
+            Attacker.DealDamage(Defender, damage);
 
-            Assert.Equal(previousHealth - damage, c1.Health);
+            Assert.Equal(previousHealth - damage, Defender.Health);
         }
 
         [Fact]
         public void CharacterHasDamagedOverDeath()
         {
-            Character c1 = new Character();
+            Character Attacker = new Character();
+            Character Defender = new Character();
 
-            int damage = c1.Health + 1;
-            c1.Damage(damage);
+            int damage = Defender.Health + 1;
+            Attacker.DealDamage(Defender, damage);
 
-            Assert.Equal(0, c1.Health);
-            Assert.False(c1.IsAlive);
+            Assert.Equal(0, Defender.Health);
+            Assert.False(Defender.IsAlive);
         }
 
         [Fact]
         public void CharacterHasDamagedExactlyToDeath()
         {
-            Character c1 = new Character();
+            Character Attacker = new Character();
+            Character Defender = new Character();
 
-            int damage = c1.Health;
-            c1.Damage(damage);
+            int damage = Defender.Health;
+            Attacker.DealDamage(Defender, damage);
 
-            Assert.Equal(0, c1.Health);
-            Assert.False(c1.IsAlive);
+            Assert.Equal(0, Defender.Health);
+            Assert.False(Defender.IsAlive);
         }
 
         [Fact]
         public void CharacterCanBeHeal()
         {
-            Character c1 = new Character();
+            Character Attacker = new Character();
+            Character Defender = new Character();
 
             int x = 70;
-            c1.Damage(x);
-            c1.Heal(x);
+            Attacker.DealDamage(Defender, x);
+            Defender.Heal(x);
 
-            Assert.Equal(HealthLimit, c1.Health);
+            Assert.Equal(HealthLimit, Defender.Health);
         }
 
         [Fact]
         public void CharacterHealthCannotBeOver1000()
         {
-            Character c1 = new Character();
+            Character Attacker = new Character();
+            Character Defender = new Character();
 
             int x = 70;
-            c1.Damage(x);
-            c1.Heal(x + 1);
+            Attacker.DealDamage(Defender, x);
+            Defender.Heal(x + 1);
 
-            Assert.Equal(HealthLimit, c1.Health);
+            Assert.Equal(HealthLimit, Defender.Health);
         }
 
         [Fact]
         public void DeadCharacterCannotBeHealt()
         {
-            Character c1 = new Character();
+            Character Attacker = new Character();
+            Character Defender = new Character();
 
-            c1.Damage(HealthLimit);
-            c1.Heal(1);
+            Attacker.DealDamage(Defender, HealthLimit);
+            Defender.Heal(1);
 
-            Assert.Equal(0, c1.Health);
-            Assert.False(c1.IsAlive);
+            Assert.Equal(0, Defender.Health);
+            Assert.False(Defender.IsAlive);
         }
 
         [Fact]
@@ -110,11 +117,9 @@ namespace RpgGameKata.Tests
             Character c1 = new Character();
 
             int previousHealth = c1.Health;
-            c1.Damage(c1, 1);
+            c1.DealDamage(c1, 1);
 
             Assert.Equal(previousHealth, c1.Health);
         }
-
-
     }
 }

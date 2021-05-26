@@ -16,7 +16,7 @@ namespace RpgGameKata
             get { return Health > 0; }
         }
 
-        public void Damage(int damage)
+        private void Damage(int damage)
         {
             if (damage >= Health)
             {
@@ -36,10 +36,12 @@ namespace RpgGameKata
                 Health = HealthLimit;
         }
 
-        public void Damage(Character character, int damage)
+        public void DealDamage(Character character, int damage)
         {
             if (character.Equals(this))
                 return;
+
+            character.Damage(damage);
         }
     }
 }
