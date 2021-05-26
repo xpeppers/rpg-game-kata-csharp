@@ -8,7 +8,7 @@ namespace RpgGameKata.Tests
         [Fact]
         public void A_Simple_Test()
         {
-            Assert.True(false); // Fix me first!
+            Assert.True(true);
         }
     }
 }
