@@ -15,5 +15,10 @@ namespace RpgGameKata
 		{
 			character2.Health -= Math.Min(character2.Health, damage);
 		}
-	}
+
+        public void Heal(int healValue)
+        {
+			this.Health += healValue;
+        }
+    }
 }
