@@ -7,24 +7,24 @@ namespace RpgGameKata.Tests
 		[Fact]
 		public void Damage_To_Character_Decrease_His_Health()
 		{
-			Character character1 = new Character();
-			Character character2 = new Character();
+			Character attacker = new Character();
+			Character target = new Character();
 
-			character1.Attack(character2, 1);
-			Assert.Equal(999, character2.Health);
+			attacker.Attack(target, 1);
+			Assert.Equal(999, target.Health);
 
 		}
 
 		[Fact]
 		public void Damage_To_Character_When_Damage_Exceeds_Health()
 		{
-			Character character1 = new Character();
-			Character character2 = new Character();
+			Character attacker = new Character();
+			Character target = new Character();
 
-			character1.Attack(character2, 1001);
+			attacker.Attack(target, 1001);
 
-			Assert.Equal(0, character2.Health);
-            Assert.False(character2.IsAlive);
+			Assert.Equal(0, target.Health);
+            Assert.False(target.IsAlive);
         }
 	}
 }
